@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        .page {
+            display: none;
+            margin: 0 auto;
+            float: unset;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!------- GABI CHANGES ------->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background: #eee !important;
+        }
+
+        .wrapper {
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+
+        .form-signin, .form-signup {
+            max-width: 380px;
+            padding: 15px 35px 45px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid rgba(0,0,0,0.1);
+            .form-signin-heading, .checkbox;
+
+        {
+            margin-bottom: 30px;
+        }
+
+        .checkbox {
+            font-weight: normal;
+        }
+
+        .form-control {
+            position: relative;
+            font-size: 16px;
+            height: auto;
+            padding: 10px;
+            @include box-sizing(border-box);
+            &:focus;
+
+        {
+            z-index: 2;
+        }
+
+        }
+
+        input[type="text"] {
+            margin-bottom: -1px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        input[type="password"] {
+            margin-bottom: 20px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        }
+    </style>
+
+
+    <script>
+        function init() {
+            divLogin = document.getElementById("divLogin");
+            divSignup = document.getElementById("divSignup");
+            years();
+            divLogin.style.display = "block";
+
+        }
+
+        function years() {
+                for (i = 2017; i > 1917; i--) {
+                    year.innerHTML = year.innerHTML + '<option value="' + i + '">' + i + "</options>";
+            }
+        }
+
+        function signUpShow() {
+            divLogin = document.getElementById("divLogin");
+            divSignup = document.getElementById("divSignup");
+            $("#divLogin").hide();
+            $("#divSignup").show();
+        }
+
+        function petsVisibility() {
+            petsYes = document.getElementById("petsYes");
+            petsNo = document.getElementById("petsNo");
+
+            if (petsYes.checked) {
+                kindOfPets = document.getElementById("kindOfPets");
+                $('#kindOfPets').show();
+            }
+            else if (petsNo.checked) {
+                kindOfPets = document.getElementById("kindOfPets");
+                $('#kindOfPets').hide();
+            }
+
+
+        }
+
+    </script>
+
+</head>
+<body onload="init()">
+
+    <div id="divLogin" class="wrapper">
+        <form class="form-signin">
+            <h2 class="form-signin-heading">Welcome to Find your roomate website</h2>
+            <input type="text" class="form-control" name="txtUserName" id="txtUserName" placeholder="Username" required="" autofocus="" />
+            <input type="password" class="form-control" name="txtPassword" id="txtPassword" placeholder="Password" required="" />
+            <div class="btn-group" style="width:100%">
+                <button class="btn btn-lg btn-primary col-md-6" type="submit">Login</button>
+                <button class="btn btn-lg btn-danger col-md-6" onclick="signUpShow()">Signup</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="divSignup" style="width:1000px;height:2000px;" class="page container">
+
+        <form class="form-signup">
+            <div id="personalInformation" class="div1">
+                <div class="page-header"><h2 style="text-align:center">Signup</h2></div>
+                <h3>Personal information</h3>
+                <input type="text" class="form-control" name="txtUserName" id="txtUserName" placeholder="Username" required="" autofocus="" />
+                <input type="password" class="form-control" name="txtPassword" id="txtPassword" placeholder="Password" required="" />
+                <input type="password" class="form-control" name="txtPassword2" id="txtPassword2" placeholder="Password" required="" />
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+
+                <fieldset class="form-group">
+                    <legend>Gender</legend>
+                    <div class="form-check"> <label class="form-check-label"> <input type="radio" class="form-check-input" name="gender" id="male" value="male"> Male </label> </div>
+                    <div class="form-check"> <label class="form-check-label"> <input type="radio" class="form-check-input" name="gender" id="female" value="female"> Female </label> </div>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="year">Year of birth</label>
+                    <select class="form-control" id="year"> </select>
+                </div>
+            </div>
+
+            <div id="cityOfResidence" class="div1">
+                <h3>City of residence</h3>
+                <div class="form-group">
+                    <label for="town"> In which city do you want to live?  </label>
+                    <select class="form-control" id="town"> </select>
+                </div>
+
+                <label>Will you consider to change city of residente?</label>
+                <div class="row">
+                    <div class="col-xs-2">No</div>
+                    <div class="col-xs-8"><input type="range" min="0" max="4"></div>
+                    <div class="col-xs-2">Yes</div>
+                </div>
+            </div>
+
+            <div id="smoking" class="div1">
+                <h3>Smoking</h3>
+                <fieldset class="form-group">
+                    <label>Do you smoke</label>
+                    <div class="form-check"> <label class="form-check-label"> <input type="radio" class="form-check-input" name="smoke" id="yes" value="yes"> Yes </label> </div>
+                    <div class="form-check"> <label class="form-check-label"> <input type="radio" class="form-check-input" name="smoke" id="no" value="no"> No </label> </div>
+                </fieldset>
+
+                <label>Will you consider to rent with someone who does smoke?</label>
+                <div class="row">
+                    <div class="col-xs-2">No</div>
+                    <div class="col-xs-8"><input type="range" min="0" max="4"></div>
+                    <div class="col-xs-2">Yes</div>
+                </div>
+            </div>
+
+            <div id=pets class=div1>
+                <h3>Pets</h3>
+                <fieldset class=form-group>
+                    <label>Do you own any pets</label>
+                    <div class=form-check> <label class="form-check-label"> <input type="radio" class="form-check-input" name="havePets" id="petsNo" value="no" checked="checked" onchange="petsVisibility()"> No </label></div>
+                    <div class=form-check> <label class="form-check-label"> <input type="radio" class="form-check-input" name="havePets" id="petsYes" value="yes" onchange="petsVisibility()"> Yes </label></div>
+                </fieldset>
+
+                <div id="kindOfPets" style="display:none">
+                    <label>Which kind of pets do you own?</label>
+                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="petown"> Dog </label></div>
+                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="petown"> Cat </label></div>
+                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="petown">  Parrot </label></div>
+                    <div class="checkbox"><label class="form-check-label"><input type="checkbox" class="form-check-input" name="petown"> Fish aquarium</label> </div>
+                    <div class="checkbox"><label class="form-check-label"><input type="checkbox" class="form-check-input" name="petown"> Snake \ Spider  </label></div>
+                    <div class="checkbox"> <label class="form-check-label"> <input type="checkbox" class="form-check-input" name="petown"> Hamster \ Rabbit </label></div>
+                </div>
+
+                <label>With what kind of pet owner you'll disagree to live with?</label>
+                <div class=checkbox><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="petLive"> All </label></div>
+                <div class=checkbox><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="petLive"> Dog </label></div>
+                <div class=checkbox><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="petLive"> Cat </label></div>
+                <div class=checkbox><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="petLive">  Parrot </label></div>
+                <div class=checkbox><label class="form-check-label"><input type="checkbox" class="form-check-input" name="petLive"> Fish aquarium</label> </div>
+                <div class=checkbox><label class="form-check-label"><input type="checkbox" class="form-check-input" name="petLive"> Snake \ Spider  </label></div>
+                <div class=checkbox> <label class="form-check-label"> <input type="checkbox" class="form-check-input" name="petLive"> Hamster \ Rabbit </label></div>
+                </div>
+
+            <div id="languages" class="div1">
+                <h3>Languages</h3>
+                <label>Which languages do you speak?</label>
+                <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Hebrew </label></div>
+                <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> English </label></div>
+                <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Russian </label></div>
+                <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Arabic </label></div>
+                <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Ethiopian </label></div>
+                <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Persian </label></div>
+                <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Morocan </label></div>
+                <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Yiddish </label></div>
+            </div>
+            <button type="submit" class="btn btn-info btn-block">Submit</button>
+        </form>
+</body>
+</html>
