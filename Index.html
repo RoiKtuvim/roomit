@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
-<!-- saved from url=(0033)http://localhost:49998/Index.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+<head>
     <title></title>
-    
+    <meta charset="utf-8" />
     <style>
         .page {
             display: none;
@@ -11,11 +12,11 @@
         }
     </style>
 
-    <script src="./Index_files/jquery.min.js.הורד"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <!------- GABI CHANGES ------->
-    <link href="./Index_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="./Index_files/bootstrap.min.js.הורד" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <style>
         body {
             background: #eee !important;
@@ -34,10 +35,8 @@
             border: 1px solid rgba(0,0,0,0.1);
             .form-signin-heading, .checkbox;
         }
-        
-        
-        
-        .form-signup {
+
+            .form-signup {
             max-width: 700px;
             padding: 15px 35px 45px;
             margin: 0 auto;
@@ -81,27 +80,34 @@
 
         }
     </style>
+
+
     <script>
         function init() {
             divLogin = document.getElementById("divLogin");
             divSignup = document.getElementById("divSignup");
             years();
             divLogin.style.display = "block";
+
         }
+
         function years() {
                 for (i = 2017; i > 1917; i--) {
                     year.innerHTML = year.innerHTML + '<option value="' + i + '">' + i + "</options>";
             }
         }
+
         function signUpShow() {
             divLogin = document.getElementById("divLogin");
             divSignup = document.getElementById("divSignup");
             $("#divLogin").hide();
             $("#divSignup").show();
         }
+
         function petsVisibility() {
             petsYes = document.getElementById("petsYes");
             petsNo = document.getElementById("petsNo");
+
             if (petsYes.checked) {
                 kindOfPets = document.getElementById("kindOfPets");
                 $('#kindOfPets').show();
@@ -110,6 +116,7 @@
                 kindOfPets = document.getElementById("kindOfPets");
                 $('#kindOfPets').hide();
             }
+
         }
 
         function cityVisibility() {
@@ -121,9 +128,8 @@
             else if (cityRange != 0) {
                 cityFYI = document.getElementById("cityFYI");
                 $('#cityFYI').hide()
-            }   
+            }
         }
-
         function smokerVisibility() {
             smokeRange = document.getElementById("smokeRange").value;
             if (smokeRange == 0) {
@@ -135,25 +141,25 @@
                 $('#smokerFYI').hide()
             }
         }
-    </script>
-</head>
 
+    </script>
+
+</head>
 <body onload="init()">
-    <h1 style="text-align:center; margin:50px"> <strong>Welcome to find your roommate website</strong></h1>
-    <div id="divLogin" class="wrapper" style="display: none;">
+
+    <div id="divLogin" class="wrapper">
         <form class="form-signin">
-            <h2 class="form-signin-heading">Please login or signup</h2>
-            <input type="text" class="form-control" name="txtUserName" id="txtUserName" placeholder="Username" required="" autofocus="">
-            <input type="password" class="form-control" name="txtPassword" id="txtPassword" placeholder="Password" required="">
+            <h2 class="form-signin-heading">Welcome to Find your roomate website</h2>
+            <input type="text" class="form-control" name="txtUserName" id="txtUserName" placeholder="Username" required="" autofocus="" />
+            <input type="password" class="form-control" name="txtPassword" id="txtPassword" placeholder="Password" required="" />
             <div class="btn-group" style="width:100%">
                 <button class="btn btn-lg btn-primary col-md-6" type="submit">Login</button>
                 <button class="btn btn-lg btn-danger col-md-6" onclick="signUpShow()">Signup</button>
             </div>
         </form>
     </div>
-    <div id="divSignup" style="width: 1000px; height: 2000px; display: block;" class="page container">
-        
-        
+
+    <div id="divSignup" style="width:1000px;height:2000px;" class="page container">
 
         <form class="form-signup">
 
@@ -182,9 +188,8 @@
                     </div>
                 </div>
                 <button onclick="">Continue to step 2</button>
-                 <button onclick="">Save and exit</button>
+                <button onclick="">Save and exit</button>
             </div>
-
             <div id="divInterests">
                 <div id="cityOfResidence" class="div1">
                     <h3>City of residence</h3>
@@ -200,8 +205,7 @@
                         <div id="cityFYI" style="display: none;">
                             <br>  *Choosing <strong>NO</strong> will reduce your available options for rent!
                         </div>
-
-                        </div>
+                    </div>
                 </div>
                 <div id="smoking" class="div1">
                     <h3>Smoking</h3>
@@ -220,31 +224,33 @@
                         </div>
                     </div>
                 </div>
-
                 <div id="languages" class="div1">
                     <h3>Languages</h3>
                     <label>Which languages do you speak?</label>
-                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Hebrew </label>   
-                     <label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> English </label>   
-                    <label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Russian </label></div>
-                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Arabic </label></div>
-                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Ethiopian </label></div>
-                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Persian </label></div>
-                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Morocan </label></div>
-                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Yiddish </label></div>
-                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> French </label></div>
-                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Spanish </label></div>
-                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Italian </label></div>
-                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Portuguese </label></div>
-                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Georgian  </label></div>
-                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Dutch  </label></div>
-                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> German  </label></div>
-
+                    <div class="checkbox">
+                        <label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Hebrew </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> English </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Russian </label>
+                    </div>
+                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Arabic </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                     <label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Ethiopian </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                     <label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Persian </label>
+                    </div>
+                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Morocan </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                     <label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Yiddish </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> French </label>
+                    </div>
+                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Spanish </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Italian </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Portuguese </label>
+                        </div>
+                    <div class="checkbox"><label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Georgian  </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> Dutch  </label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <label class="form-check-label"> <input type="checkbox" class="form-check-input" name="lang"> German  </label></div>
                 </div>
                 <button onclick="">Continue to step 3</button>
                 <button onclick="">Save and exit</button>
             </div>
-
             <div id="divPreference">
                 <div id="pets" class="div1">
                     <h3>Pets</h3>
@@ -288,11 +294,9 @@
                     </div>
                 </div>
 
-                
                 <button type="submit" class="btn btn-info btn-block">Finish</button>
-
             </div>
         </form>
     </div>
-
-</body></html>
+</body>
+</html>
